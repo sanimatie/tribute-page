@@ -1,0 +1,98 @@
+body {
+  background-color: hsl(4, 7%, 92%);
+  color: hsl(18, 57%, 35%);
+  font-family: "open sans", sans-serif;
+}
+
+/*header*/
+
+#title {
+  position: sticky;
+  /*position: -webkit-sticky;*/
+  top: 0;
+  background-color: rgba(240, 155, 117, 0.7);
+  padding: 20px;
+  z-index: 10;
+  animation-name: fade-in;
+  animation-duration: 3s;
+}
+
+/*typografie*/
+h1 {
+  color: #AD0166;
+  text-align: center;
+  font-family:"Berkshire Swash", sans-serif;
+  font-size: 10vh;
+ }
+
+a {
+  color: #AD0166;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*content*/
+
+#content {
+  width: 90%;
+  max-width: 150vh;
+  margin: auto;
+}
+
+#img-div {
+  display: block;
+  width: 100%;
+  margin: auto;
+}
+#image {
+  display: block;
+  width: 100%;
+  max-width: 4000px;
+  height: auto;
+  animation-name: fade-in;
+  animation-duration: 3s;
+}
+
+#doosje {
+  width: 50%;
+  max-width: 900px;
+  margin: auto;
+}
+
+#img-doosje {
+  display: block;
+  width: 100%;
+  height: auto;  
+}
+
+img {
+  border-style: solid;
+  border-color: rgba(240, 155, 117, 1);
+  border-width: 20px;
+  box-shadow: 10px 10px 5px rgba(235, 151, 200, 0.5);
+  margin-left: -20px;
+  /*de foute uitlijning kwam door de borders waardoor de formaten niet meer klopten*/
+}
+
+figcaption {
+  margin-top: 20px;
+  font-size: 13px;
+  text-align: center;
+}
+
+footer {
+  margin-top: 20px;
+  margin-bottom: 0;
+  background-color: rgba(235, 151, 200, 0.5);
+  padding: 10px;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+}
