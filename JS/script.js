@@ -24,8 +24,7 @@ const quoteText = document.getElementById('quote-text');
 if (randomQuote !== previousQuote){
 	quoteText.innerHTML = '"' + Quotes[randomQuote] + '"';
 	previousQuote = randomQuote;
-	console.log(previousQuote);
-	console.log(randomQuote);
+	
 } else {
 	newQuote();
 }
