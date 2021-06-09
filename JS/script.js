@@ -4,13 +4,31 @@ const Quotes = [
 "Nee.",
 "Geef aandacht.",
 "IK ZIE NIKS.",
-"Hoe bedoel je er staat nog eten???"
+"Hoe bedoel je er staat nog eten???", 
+"Mrauw",
+"Miauw!",
+"Grrrrrrrr",
+"prrrrr",
+"Miauw?"
 ]
 
-function newQuote() {
+let previousQuote;
 // genereer een willekeurig indexnummer
+
+function newQuote() {
 const randomQuote = Math.floor(Math.random()*(Quotes.length));
-document.getElementById("quote-text").innerHTML = '"' + Quotes[randomQuote] + '"';
+const quoteText = document.getElementById('quote-text');
+
+//zorg dat nooit direct na elkaar dezelfde quote verschijnt
+
+if (randomQuote !== previousQuote){
+	quoteText.innerHTML = '"' + Quotes[randomQuote] + '"';
+	previousQuote = randomQuote;
+	console.log(previousQuote);
+	console.log(randomQuote);
+} else {
+	newQuote();
+}
 }
 
 newQuote();
