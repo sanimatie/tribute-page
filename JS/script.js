@@ -12,22 +12,28 @@ const Quotes = [
 "Miauw?"
 ]
 
-let previousQuote;
-// genereer een willekeurig indexnummer
+let copyQuote = [...Quotes];
+let finalQuote;
 
 function newQuote() {
-const randomQuote = Math.floor(Math.random()*(Quotes.length));
-const quoteText = document.getElementById('quote-text');
-
-//zorg dat nooit direct na elkaar dezelfde quote verschijnt
-
-if (randomQuote !== previousQuote){
-	quoteText.innerHTML = '"' + Quotes[randomQuote] + '"';
-	previousQuote = randomQuote;
-	
+	//genereer een willekeurig indexnummer
+	const randomQuote = Math.floor(Math.random()*(copyQuote.length));
+	const quoteText = document.getElementById('quote-text');
+		//reset de array als alle opties geweest zijn
+		if (copyQuote.length == 1){
+		copyQuote = [...Quotes];
+		}
+//voorkom herhaling van dezelfde quote na het resetten van de array	
+if (finalQuote !== copyQuote[randomQuote]){
+//plaats de quote in het html block
+finalQuote = copyQuote[randomQuote];
+quoteText.innerHTML = '"' + finalQuote + '"';
+//haal quote uit de array
+copyQuote.splice(randomQuote, 1);
 } else {
+	//herhaal de functie als de nieuwe quote hetzelfde was als de vorige
 	newQuote();
-}
+} 
 }
 
 newQuote();
